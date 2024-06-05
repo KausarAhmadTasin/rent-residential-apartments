@@ -5,6 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider/AuthContext";
 const Register = () => {
   const [successMessage, setSuccsessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const { createUser } = useContext(AuthContext);
 
@@ -19,6 +20,16 @@ const Register = () => {
     // Reset error and success message
     setErrorMessage("");
     setSuccsessMessage("");
+    setPasswordError("");
+
+    // Password validation
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+    if (!passwordRegex.test(password)) {
+      setPasswordError(
+        "Password must have at least one uppercase letter, one lowercase letter, and be at least 6 characters long."
+      );
+      return;
+    }
 
     createUser(email, password, name, photoUrl)
       .then(() => {
@@ -31,6 +42,55 @@ const Register = () => {
 
   return (
     <div>
+      {/* 
+                           Success and error alert
+      */}
+      {passwordError && (
+        <>
+          <div
+            role="alert"
+            className="alert alert-error absolute text-center w-1/4 right-1 top-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="stroke-current shrink-0 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>Password is not accepted!</span>
+          </div>
+        </>
+      )}
+      {successMessage && (
+        <>
+          <div
+            role="alert"
+            className="alert alert-success absolute text-center w-1/4 right-1 top-1 text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="stroke-current shrink-0 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>Registered Successfully!</span>
+          </div>
+        </>
+      )}
       <form onSubmit={handleRegisterSubmit}>
         <h1 className="text-center font-bold text-3xl my-7">
           Please Register{" "}
@@ -140,7 +200,14 @@ const Register = () => {
         <p className="text-red-600 text-center my-3 ">{errorMessage}</p>
       )}
       {successMessage && (
-        <p className="text-green-600 text-center my-3">{successMessage}</p>
+        <>
+          <p className="text-green-600 text-center my-3">{successMessage}</p>
+        </>
+      )}
+      {passwordError && (
+        <>
+          <p className="text-red-600 text-center my-3">{passwordError}</p>
+        </>
       )}
     </div>
   );

@@ -9,7 +9,7 @@
     "area": "3000 sq ft",
     "location": "Gulshan, Dhaka, Bangladesh",
     "facilities": ["living room", "Kitchen", "Gym", "Swimming Pool"],
-    "image_url": "https://example.com/images/gulshan_luxury.jpg"
+    "image_url": "https://i.ibb.co/hxGg78j/jilbert-ebrahimi-kj4f-RRj5-Tqc-unsplash.jpg"
   },
   {
     "id": "2",
@@ -21,7 +21,7 @@
     "area": "1200 sq ft",
     "location": "Banani, Dhaka, Bangladesh",
     "facilities": ["living room", "Kitchen", "Balcony"],
-    "image_url": "https://example.com/images/banani_cozy.jpg"
+    "image_url": "https://i.ibb.co/cLhbhdC/kenny-eliason-kdwahp-WYf-Qo-unsplash.jpg"
   },
   {
     "id": "3",
@@ -33,7 +33,7 @@
     "area": "2500 sq ft",
     "location": "Dhanmondi, Dhaka, Bangladesh",
     "facilities": ["living room", "Kitchen", "Parking", "Security"],
-    "image_url": "https://example.com/images/dhanmondi_spacious.jpg"
+    "image_url": "https://i.ibb.co/fpBhq0H/grant-Uhp-YKnq-Zw-E8-unsplash.jpg"
   },
   {
     "id": "4",
@@ -45,7 +45,7 @@
     "area": "600 sq ft",
     "location": "Mirpur, Dhaka, Bangladesh",
     "facilities": ["living room", "Kitchen"],
-    "image_url": "https://example.com/images/mirpur_studio.jpg"
+    "image_url": "https://i.ibb.co/gRjr0hw/naomi-hebert-MP0bga-S-d1c-unsplash.jpg"
   },
   {
     "id": "5",
@@ -57,7 +57,7 @@
     "area": "1500 sq ft",
     "location": "Uttara, Dhaka, Bangladesh",
     "facilities": ["living room", "Kitchen", "Gym"],
-    "image_url": "https://example.com/images/uttara_modern.jpg"
+    "image_url": "https://i.ibb.co/xFt973G/grant-N90-LM3-A5-AZQ-unsplash.jpg"
   },
   {
     "id": "6",
@@ -69,7 +69,7 @@
     "area": "3500 sq ft",
     "location": "Baridhara, Dhaka, Bangladesh",
     "facilities": ["living room", "Kitchen", "Swimming Pool", "Security"],
-    "image_url": "https://example.com/images/baridhara_elegant.jpg"
+    "image_url": "https://i.ibb.co/k8JMz6D/ian-dooley-JR5-Tx-KNSo-unsplash.jpg"
   },
   {
     "id": "7",
@@ -81,7 +81,7 @@
     "area": "1000 sq ft",
     "location": "Banasree, Dhaka, Bangladesh",
     "facilities": ["living room", "Kitchen", "Parking"],
-    "image_url": "https://example.com/images/banasree_compact.jpg"
+    "image_url": "https://i.ibb.co/k6ksby6/hannah-busing-U-k6-XLlml1-I-unsplash.jpg"
   },
   {
     "id": "8",
@@ -93,7 +93,7 @@
     "area": "3200 sq ft",
     "location": "Bashundhara, Dhaka, Bangladesh",
     "facilities": ["living room", "Kitchen", "Gym", "Parking"],
-    "image_url": "https://example.com/images/bashundhara_premium.jpg"
+    "image_url": "https://i.ibb.co/hgJhnXX/jarek-ceborski-jn7u-Ve-Cdf6-U-unsplash.jpg"
   },
   {
     "id": "9",
@@ -105,6 +105,6 @@
     "area": "1400 sq ft",
     "location": "Mohammadpur, Dhaka, Bangladesh",
     "facilities": ["living room", "Kitchen", "Playground"],
-    "image_url": "https://example.com/images/mohammadpur_family.jpg"
+    "image_url": "https://i.ibb.co/1zf9tmW/nastuh-abootalebi-y-Wwob8kw-OCk-unsplash.jpg"
   }
 ]

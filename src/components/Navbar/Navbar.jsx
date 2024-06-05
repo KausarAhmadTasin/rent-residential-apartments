@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   const navLink = (
     <>
       {" "}
       <li>
-        <a>Home</a>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <a>Update Profile</a>
+        <Link to="/updateProfile">Update Profile</Link>
       </li>
     </>
   );
@@ -49,13 +49,15 @@ const Navbar = () => {
               {navLink}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-2xl font-bold font-dm-serif">
+            Sweet Home
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLink}</ul>
         </div>
 
-        <div className="navbar-end space-x-3">
+        <div className="navbar-end space-x-3 mr-2">
           <div>
             {user?.photoURL && (
               <img className="rounded-full w-11" src={user.photoURL} alt="" />
@@ -66,9 +68,15 @@ const Navbar = () => {
               Logout
             </button>
           ) : (
-            <Link to="/login" className="btn">
-              Login
-            </Link>
+            <>
+              {" "}
+              <Link to="/login" className="btn">
+                Login
+              </Link>
+              <Link to="/register" className="btn">
+                Register
+              </Link>
+            </>
           )}
         </div>
       </div>
