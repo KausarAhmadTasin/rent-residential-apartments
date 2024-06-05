@@ -13,12 +13,14 @@ const Register = () => {
     const formData = new FormData(e.currentTarget);
     const email = formData.get("email");
     const password = formData.get("password");
+    const name = formData.get("name");
+    const photoUrl = formData.get("photoUrl");
 
     // Reset error and success message
     setErrorMessage("");
     setSuccsessMessage("");
 
-    createUser(email, password)
+    createUser(email, password, name, photoUrl)
       .then(() => {
         setSuccsessMessage("Successfully registered!");
       })

@@ -29,11 +29,31 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    googleLogin().then().catch();
+    googleLogin()
+      .then(() => {
+        Swal.fire("Logged in with Google!");
+      })
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Google login failed!",
+        });
+      });
   };
 
   const handleGithubLogin = () => {
-    githubLogin().then().catch();
+    githubLogin()
+      .then(() => {
+        Swal.fire("Logged in with GitHub!");
+      })
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "GitHub login failed!",
+        });
+      });
   };
 
   return (
