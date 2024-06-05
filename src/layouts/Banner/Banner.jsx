@@ -10,9 +10,8 @@ import { Pagination, Navigation } from "swiper/modules";
 import PropTypes from "prop-types";
 
 const Banner = ({ apartments }) => {
-  console.log(apartments);
   return (
-    <div className="my-10 ">
+    <div className="my-8 ">
       <Swiper
         slidesPerView={2}
         spaceBetween={0}
@@ -22,7 +21,7 @@ const Banner = ({ apartments }) => {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper "
       >
         {apartments.map((apartment) => (
           <SwiperSlide key={apartment.id}>
@@ -35,7 +34,7 @@ const Banner = ({ apartments }) => {
 };
 
 Banner.propTypes = {
-  apartments: PropTypes.object.isRequired,
+  apartments: PropTypes.array.isRequired,
 };
 
 export default Banner;
