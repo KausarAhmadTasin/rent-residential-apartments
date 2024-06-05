@@ -6,10 +6,11 @@ import { AuthContext } from "../../providers/AuthProvider/AuthContext";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const { logIn } = useContext(AuthContext);
+  const { logIn, googleLogin, githubLogin } = useContext(AuthContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
+
     const loginData = new FormData(e.currentTarget);
     const email = loginData.get("email");
     const password = loginData.get("password");
@@ -25,6 +26,14 @@ const Login = () => {
           text: "Login failed!",
         });
       });
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin().then().catch();
+  };
+
+  const handleGithubLogin = () => {
+    githubLogin().then().catch();
   };
 
   return (
@@ -101,10 +110,16 @@ const Login = () => {
                 Auth login options
         */}
       <div className="flex justify-center gap-3 my-6">
-        <button className="btn w-1/4 rounded-full text-base ">
+        <button
+          onClick={handleGoogleLogin}
+          className="btn w-1/4 rounded-full text-base "
+        >
           <FcGoogle className="text-xl mx-1" /> Sign in with Google
         </button>
-        <button className="btn w-1/4 rounded-full text-base ">
+        <button
+          onClick={handleGithubLogin}
+          className="btn w-1/4 rounded-full text-base "
+        >
           <VscGithub className="text-xl mx-1" /> Sign in with GitHub
         </button>
       </div>
