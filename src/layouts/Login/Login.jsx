@@ -1,13 +1,30 @@
+import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { VscGithub } from "react-icons/vsc";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider/AuthContext";
+import Swal from "sweetalert2";
 
 const Login = () => {
+  const { logIn } = useContext(AuthContext);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const loginData = new FormData(e.currentTarget);
     const email = loginData.get("email");
     const password = loginData.get("password");
+
+    logIn(email, password)
+      .then(() => {
+        Swal.fire("Logged in successfully!");
+      })
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Login failed!",
+        });
+      });
   };
 
   return (
@@ -72,7 +89,7 @@ const Login = () => {
         */}
           <Link to="/register">
             <p className="text-center text-gray-500 mt-3">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <span className="text-blue-700 font-semibold  hover:underline hover:underline-offset-1">
                 Register
               </span>

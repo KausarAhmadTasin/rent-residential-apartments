@@ -1,8 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider/AuthContext";
 
 const Register = () => {
+  const [successMessage, setSuccsessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const { createUser } = useContext(AuthContext);
 
   const handleRegisterSubmit = (e) => {
@@ -11,12 +14,16 @@ const Register = () => {
     const email = formData.get("email");
     const password = formData.get("password");
 
+    // Reset error and success message
+    setErrorMessage("");
+    setSuccsessMessage("");
+
     createUser(email, password)
-      .them((result) => {
-        console.log(result.user);
+      .then(() => {
+        setSuccsessMessage("Successfully registered!");
       })
       .catch((error) => {
-        console.log(error);
+        setErrorMessage(error.message);
       });
   };
 
@@ -127,6 +134,12 @@ const Register = () => {
           </Link>
         </div>
       </form>
+      {errorMessage && (
+        <p className="text-red-600 text-center my-3 ">{errorMessage}</p>
+      )}
+      {successMessage && (
+        <p className="text-green-600 text-center my-3">{successMessage}</p>
+      )}
     </div>
   );
 };
