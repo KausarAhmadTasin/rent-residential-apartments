@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "estate_title": "Luxury Apartment in Gulshan",
+    "segment_name": "High-end",
+    "description": "A beautiful luxury apartment in the heart of Gulshan, featuring modern amenities and spacious living areas.",
+    "price": "৳50,000,000",
+    "status": "sale",
+    "area": "3000 sq ft",
+    "location": "Gulshan, Dhaka, Bangladesh",
+    "facilities": ["living room", "Kitchen", "Gym", "Swimming Pool"],
+    "image_url": "https://example.com/images/gulshan_luxury.jpg"
+  },
+  {
+    "id": "2",
+    "estate_title": "Cozy Apartment in Banani",
+    "segment_name": "Mid-range",
+    "description": "A cozy and affordable apartment located in Banani, perfect for small families or singles.",
+    "price": "৳150,000/month",
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "Banani, Dhaka, Bangladesh",
+    "facilities": ["living room", "Kitchen", "Balcony"],
+    "image_url": "https://example.com/images/banani_cozy.jpg"
+  },
+  {
+    "id": "3",
+    "estate_title": "Spacious Apartment in Dhanmondi",
+    "segment_name": "High-end",
+    "description": "A spacious apartment in Dhanmondi with a modern design and top-notch facilities.",
+    "price": "৳45,000,000",
+    "status": "sale",
+    "area": "2500 sq ft",
+    "location": "Dhanmondi, Dhaka, Bangladesh",
+    "facilities": ["living room", "Kitchen", "Parking", "Security"],
+    "image_url": "https://example.com/images/dhanmondi_spacious.jpg"
+  },
+  {
+    "id": "4",
+    "estate_title": "Affordable Studio in Mirpur",
+    "segment_name": "Budget",
+    "description": "An affordable studio apartment in Mirpur, ideal for students or singles.",
+    "price": "৳80,000/month",
+    "status": "rent",
+    "area": "600 sq ft",
+    "location": "Mirpur, Dhaka, Bangladesh",
+    "facilities": ["living room", "Kitchen"],
+    "image_url": "https://example.com/images/mirpur_studio.jpg"
+  },
+  {
+    "id": "5",
+    "estate_title": "Modern Flat in Uttara",
+    "segment_name": "Mid-range",
+    "description": "A modern flat in Uttara with all the necessary amenities and close to shopping centers.",
+    "price": "৳20,000,000",
+    "status": "sale",
+    "area": "1500 sq ft",
+    "location": "Uttara, Dhaka, Bangladesh",
+    "facilities": ["living room", "Kitchen", "Gym"],
+    "image_url": "https://example.com/images/uttara_modern.jpg"
+  },
+  {
+    "id": "6",
+    "estate_title": "Elegant Apartment in Baridhara",
+    "segment_name": "High-end",
+    "description": "An elegant apartment in Baridhara with luxurious interiors and high security.",
+    "price": "৳60,000,000",
+    "status": "sale",
+    "area": "3500 sq ft",
+    "location": "Baridhara, Dhaka, Bangladesh",
+    "facilities": ["living room", "Kitchen", "Swimming Pool", "Security"],
+    "image_url": "https://example.com/images/baridhara_elegant.jpg"
+  },
+  {
+    "id": "7",
+    "estate_title": "Compact Flat in Banasree",
+    "segment_name": "Budget",
+    "description": "A compact and affordable flat in Banasree, suitable for couples or small families.",
+    "price": "৳120,000/month",
+    "status": "rent",
+    "area": "1000 sq ft",
+    "location": "Banasree, Dhaka, Bangladesh",
+    "facilities": ["living room", "Kitchen", "Parking"],
+    "image_url": "https://example.com/images/banasree_compact.jpg"
+  },
+  {
+    "id": "8",
+    "estate_title": "Premium Apartment in Bashundhara",
+    "segment_name": "High-end",
+    "description": "A premium apartment in Bashundhara with state-of-the-art facilities and a prime location.",
+    "price": "৳55,000,000",
+    "status": "sale",
+    "area": "3200 sq ft",
+    "location": "Bashundhara, Dhaka, Bangladesh",
+    "facilities": ["living room", "Kitchen", "Gym", "Parking"],
+    "image_url": "https://example.com/images/bashundhara_premium.jpg"
+  },
+  {
+    "id": "9",
+    "estate_title": "Family Apartment in Mohammadpur",
+    "segment_name": "Mid-range",
+    "description": "A family-friendly apartment in Mohammadpur with easy access to schools and parks.",
+    "price": "৳18,000,000",
+    "status": "sale",
+    "area": "1400 sq ft",
+    "location": "Mohammadpur, Dhaka, Bangladesh",
+    "facilities": ["living room", "Kitchen", "Playground"],
+    "image_url": "https://example.com/images/mohammadpur_family.jpg"
+  }
+]
