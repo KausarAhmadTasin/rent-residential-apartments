@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-[#0D263C]">
+      <div className="navbar fixed z-40 top-0 bg-[#0D263C]">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -76,7 +76,7 @@ const Navbar = () => {
             to="/"
             className="btn btn-ghost text-2xl md:ml-0 -ml-6 font-bold font-dm-serif text-[#7aa93c]"
           >
-            Sweet <span className="text-[#EC6325]">Home</span>
+            Sweet<span className="text-[#EC6325]">Home</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

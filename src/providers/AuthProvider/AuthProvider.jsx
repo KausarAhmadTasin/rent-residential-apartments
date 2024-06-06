@@ -52,6 +52,13 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, githubProvider);
   };
 
+  const updateProfileInfo = (name, photoUrl) => {
+    return updateProfile(user, {
+      displayName: name,
+      photoURL: photoUrl,
+    });
+  };
+
   // User information changes on user state change
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -72,6 +79,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     googleLogin,
     githubLogin,
+    updateProfileInfo,
   };
 
   return (
