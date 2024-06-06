@@ -8,7 +8,7 @@ const PrivateRouteProvider = ({ children }) => {
 
   if (loader) {
     return (
-      <div className="flex items-center justify-center my-36">
+      <div className="flex items-center justify-center h-screen">
         <span className="loading loading-ring loading-lg"></span>
       </div>
     );
