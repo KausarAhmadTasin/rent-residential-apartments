@@ -4,7 +4,7 @@ This project is a real estate website built using **React.js** and **Tailwind CS
 
 ## Live Site
 
-[Visit the live site here](https://www.sweethome.com)
+[Visit the live site here](https://rent-residential-apartment.web.app/)
 
 ## Features
 
