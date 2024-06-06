@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -8,11 +9,29 @@ const Navbar = () => {
   const navLink = (
     <>
       {" "}
-      <li>
-        <Link to="/">Home</Link>
+      <li className="">
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#7AA93C] px-2 py-1 rounded-lg  border border-[#EC6325]"
+              : "text-white"
+          }
+          to="/"
+        >
+          Home
+        </NavLink>
       </li>
-      <li>
-        <Link to="/updateProfile">Update Profile</Link>
+      <li className="">
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#7AA93C] px-2 py-1 rounded-lg  border border-[#EC6325]"
+              : "text-white"
+          }
+          to="/updateProfile"
+        >
+          Update Profile
+        </NavLink>
       </li>
     </>
   );
@@ -23,10 +42,14 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-[#0D263C]">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost text-white text-xl md:ml-0 -ml-4 lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -44,39 +67,52 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu-sm bg-[#0d263cd3] dropdown-content mt-1 -ml-2 z-20 px-4 py-6 text-center space-y-4 shadow rounded-box w-40 "
             >
               {navLink}
             </ul>
           </div>
           <Link
             to="/"
-            className="btn btn-ghost text-2xl font-bold font-dm-serif"
+            className="btn btn-ghost text-2xl md:ml-0 -ml-6 font-bold font-dm-serif text-[#7aa93c]"
           >
-            Sweet Home
+            Sweet <span className="text-[#EC6325]">Home</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navLink}</ul>
+          <ul className="space-x-5 menu-horizontal px-1">{navLink}</ul>
         </div>
 
         <div className="navbar-end space-x-3 mr-2">
           <div>
             {user?.photoURL && (
-              <img className="rounded-full w-11" src={user.photoURL} alt="" />
+              <img
+                className="rounded-full w-9 md:w-11"
+                src={user.photoURL}
+                alt=""
+              />
             )}
           </div>
           {user ? (
-            <button onClick={handleLogout} className="btn">
+            <button
+              onClick={handleLogout}
+              className="btn bg-[#EC6325] btn-sm md:btn-md rounded-2xl text-white border-none"
+            >
               Logout
             </button>
           ) : (
             <>
               {" "}
-              <Link to="/login" className="btn">
+              <Link
+                to="/login"
+                className="btn bg-[#7AA93C] btn-sm md:btn-md rounded-2xl text-white  border-none"
+              >
                 Login
               </Link>
-              <Link to="/register" className="btn">
+              <Link
+                to="/register"
+                className="btn bg-[#EC6325] btn-sm md:btn-md rounded-2xl text-white  border-none"
+              >
                 Register
               </Link>
             </>

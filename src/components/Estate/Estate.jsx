@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Estate = ({ apartment }) => {
   return (
     <div className="estate-card-container">
-      <div className="relative flex flex-col card h-full w-96 bg-base-100 shadow-xl">
+      <div className="relative flex flex-col card h-full lg:w-96 bg-base-100 shadow-xl">
         <figure className="h-48 overflow-hidden">
           <img
             src={apartment.image_url}

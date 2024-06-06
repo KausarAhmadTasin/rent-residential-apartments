@@ -17,14 +17,18 @@ const EstateDetails = () => {
   };
 
   return (
-    <div className="text-[#817f7f] container gap-6 my-10 mx-auto flex flex-col md:flex-row">
+    <div className="text-[#817f7f] p-3 container gap-6 my-10 mx-auto flex flex-col lg:flex-row">
       <div className="relative ">
-        <img className="rounded-2xl " src={estate.image_url} alt="" />
-        <h3 className="absolute top-2 right-2 bg-[#8BC34A] w-fit px-3 rounded-full text-white py-1">
+        <img
+          className="rounded-2xl  md:mx-auto"
+          src={estate.image_url}
+          alt=""
+        />
+        <h3 className="absolute top-2 md:right-14 right-2 lg:right-2 bg-[#8BC34A] w-fit px-3 rounded-full text-white py-1">
           {estate.segment_name}
         </h3>
       </div>
-      <div>
+      <div className="">
         <h1 className="mb-1 font-bold text-3xl text-[#504f4f]">
           {estate.estate_title}
         </h1>
