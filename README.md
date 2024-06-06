@@ -31,7 +31,7 @@ This project is a real estate website built using **React.js** and **Tailwind CS
 
 ##Setup Instructions
 
-1. **Clone the repository: git clone https://github.com/your-username/sweethome.git
+1. **Clone the repository: git clone https://github.com/KausarAhmadTasin/rent-residential-apartments.git
 2. **Navigate to the project directory: cd sweethome
 3. **Install dependencies: npm install
 4. **Start the development server: npm start
