@@ -6,6 +6,7 @@ import UpdateProfile from "../layouts/UpdateProfile/UpdateProfile";
 import PrivateRouteProvider from "./PrivateRouteProvider";
 import NotFound from "../layouts/NotFouod/NotFound";
 import Home from "../layouts/Home/Home";
+import EstateDetails from "../layouts/EstateDetails/EstateDetails";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,15 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("/apartments.json"),
+      },
+      {
+        path: "/:id",
+        element: (
+          <PrivateRouteProvider>
+            <EstateDetails></EstateDetails>
+          </PrivateRouteProvider>
+        ),
         loader: () => fetch("/apartments.json"),
       },
       {

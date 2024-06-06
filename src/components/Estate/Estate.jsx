@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Estate = ({ apartment }) => {
   return (
@@ -37,9 +38,11 @@ const Estate = ({ apartment }) => {
           <div className="border my-1"></div>
 
           <div className="card-actions mt-2 justify-end">
-            <button className="btn bg-green-500 text-white rounded-3xl">
-              View Details
-            </button>
+            <Link to={`/${apartment.id}`}>
+              <button className="btn bg-green-500 text-white rounded-3xl">
+                View Property
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Estate from "../../components/Estate/Estate";
 
 const Estates = ({ apartments }) => {
-  console.log(apartments);
+  // console.log(apartments);
   return (
     <div className="bg-[#e7e6e6] py-7 my-16">
       <div className="container mx-auto  ">
