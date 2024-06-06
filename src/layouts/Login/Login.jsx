@@ -1,12 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { VscGithub } from "react-icons/vsc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider/AuthContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { FaRegEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const { logIn, googleLogin, githubLogin } = useContext(AuthContext);
+  const [passwordIsOpent, setPasswordIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -18,6 +23,7 @@ const Login = () => {
     logIn(email, password)
       .then(() => {
         Swal.fire("Logged in successfully!");
+        navigate("/");
       })
       .catch(() => {
         Swal.fire({
@@ -32,6 +38,7 @@ const Login = () => {
     googleLogin()
       .then(() => {
         Swal.fire("Logged in with Google!");
+        navigate("/");
       })
       .catch(() => {
         Swal.fire({
@@ -46,6 +53,7 @@ const Login = () => {
     githubLogin()
       .then(() => {
         Swal.fire("Logged in with GitHub!");
+        navigate("/");
       })
       .catch(() => {
         Swal.fire({
@@ -57,10 +65,13 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div className="py-16">
+      <Helmet>
+        <title>SH - Login</title>
+      </Helmet>
       <form onSubmit={handleLogin} className="">
         <h1 className="text-center font-bold text-3xl my-7">Please Login </h1>
-        <div className="mx-auto w-1/2 space-y-4 rounded-2xl border px-5 py-8">
+        <div className="md:mx-auto mx-2 md:w-1/2 space-y-4 rounded-2xl border px-5 py-8">
           <label className="input input-bordered flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -96,11 +107,16 @@ const Login = () => {
               />
             </svg>
             <input
-              type="password"
+              type={passwordIsOpent ? "text" : "password"}
               name="password"
               className="grow"
               placeholder="password"
+              required
             />
+            <div onClick={() => setPasswordIsOpen(!passwordIsOpent)}>
+              {" "}
+              {passwordIsOpent ? <FaRegEyeSlash /> : <MdOutlineRemoveRedEye />}
+            </div>
           </label>
           {/* 
                       Submit Button 
@@ -129,21 +145,21 @@ const Login = () => {
       {/* 
                 Auth login options
         */}
-      <div className="flex justify-center gap-3 my-6">
+      <div className="flex lg:flex-row flex-col justify-center gap-3 my-6">
         <button
           onClick={handleGoogleLogin}
-          className="btn w-1/4 rounded-full text-base "
+          className="btn lg:w-1/4 md:w-1/3 md:mx-auto mx-4 lg:mx-0 rounded-full text-base "
         >
           <FcGoogle className="text-xl mx-1" /> Sign in with Google
         </button>
         <button
           onClick={handleGithubLogin}
-          className="btn w-1/4 rounded-full text-base "
+          className="btn lg:w-1/4 md:w-1/3 md:mx-auto mx-4 lg:mx-0 rounded-full text-base "
         >
           <VscGithub className="text-xl mx-1" /> Sign in with GitHub
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

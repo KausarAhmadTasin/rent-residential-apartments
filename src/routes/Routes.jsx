@@ -7,6 +7,7 @@ import PrivateRouteProvider from "./PrivateRouteProvider";
 import NotFound from "../layouts/NotFouod/NotFound";
 import Home from "../layouts/Home/Home";
 import EstateDetails from "../layouts/EstateDetails/EstateDetails";
+import AboutUs from "../layouts/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/aboutUs",
+        element: (
+          <PrivateRouteProvider>
+            <AboutUs></AboutUs>
+          </PrivateRouteProvider>
+        ),
       },
       {
         path: "/updateProfile",

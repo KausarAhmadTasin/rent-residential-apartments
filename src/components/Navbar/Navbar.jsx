@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthContext";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -13,8 +15,8 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-[#7AA93C] px-2 py-1 rounded-lg  border border-[#EC6325]"
-              : "text-white"
+              ? "text-[#7AA93C] mx-5 px-2  py-1 rounded-lg  border border-[#EC6325]"
+              : "mx-5 text-white px-2"
           }
           to="/"
         >
@@ -25,12 +27,24 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-[#7AA93C] px-2 py-1 rounded-lg  border border-[#EC6325]"
-              : "text-white"
+              ? "text-[#7AA93C] mx-5 px-2  py-1 rounded-lg  border border-[#EC6325]"
+              : "mx-5 text-white px-2"
+          }
+          to="/aboutUs"
+        >
+          About Us
+        </NavLink>
+      </li>
+      <li className="">
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#7AA93C] mx-5 px-2  py-1 rounded-lg  border border-[#EC6325]"
+              : "mx-5 text-white px-2 "
           }
           to="/updateProfile"
         >
-          Update Profile
+          Profile
         </NavLink>
       </li>
     </>
@@ -86,13 +100,16 @@ const Navbar = () => {
         <div className="navbar-end space-x-3 mr-2">
           <div>
             {user?.photoURL && (
-              <img
-                className="rounded-full w-9 md:w-11"
-                src={user.photoURL}
-                alt=""
-              />
+              <Tippy content={user.displayName}>
+                <img
+                  className="rounded-full w-9 md:w-11"
+                  src={user.photoURL}
+                  alt=""
+                />
+              </Tippy>
             )}
           </div>
+
           {user ? (
             <button
               onClick={handleLogout}

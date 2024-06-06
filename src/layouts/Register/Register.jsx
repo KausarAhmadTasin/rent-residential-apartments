@@ -1,11 +1,16 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider/AuthContext";
+import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { FaRegEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const [successMessage, setSuccsessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [passwordIsOpent, setPasswordIsOpen] = useState(false);
 
   const { createUser } = useContext(AuthContext);
 
@@ -34,68 +39,28 @@ const Register = () => {
     createUser(email, password, name, photoUrl)
       .then(() => {
         setSuccsessMessage("Successfully registered!");
+        Swal.fire("Registered successfully!");
       })
       .catch((error) => {
         setErrorMessage(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Registration failed!",
+        });
       });
   };
 
   return (
-    <div>
-      {/* 
-                           Success and error alert
-      */}
-      {passwordError && (
-        <>
-          <div
-            role="alert"
-            className="alert alert-error absolute text-center w-1/4 right-1 top-1"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="stroke-current shrink-0 h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <span>Password is not accepted!</span>
-          </div>
-        </>
-      )}
-      {successMessage && (
-        <>
-          <div
-            role="alert"
-            className="alert alert-success absolute text-center w-1/4 right-1 top-1 text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="stroke-current shrink-0 h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <span>Registered Successfully!</span>
-          </div>
-        </>
-      )}
+    <div className="py-16">
+      <Helmet>
+        <title>SH - Register</title>
+      </Helmet>
       <form onSubmit={handleRegisterSubmit}>
         <h1 className="text-center font-bold text-3xl my-7">
           Please Register{" "}
         </h1>
-        <div className="mx-auto w-1/2 space-y-4 rounded-2xl border px-5 py-8">
+        <div className="md:mx-auto mx-2 md:w-1/2 space-y-4 rounded-2xl border px-5 py-8">
           {/* 
                     Name
             */}
@@ -113,6 +78,7 @@ const Register = () => {
               name="name"
               className="grow"
               placeholder="Name"
+              required
             />
           </label>
 
@@ -125,6 +91,7 @@ const Register = () => {
               name="photoUrl"
               className="grow"
               placeholder="Photo URL"
+              required
             />
           </label>
 
@@ -146,6 +113,7 @@ const Register = () => {
               name="email"
               className="grow"
               placeholder="Email"
+              required
             />
           </label>
           {/* 
@@ -166,11 +134,16 @@ const Register = () => {
               />
             </svg>
             <input
-              type="password"
+              type={passwordIsOpent ? "text" : "password"}
               name="password"
               className="grow"
               placeholder="password"
+              required
             />
+            <div onClick={() => setPasswordIsOpen(!passwordIsOpent)}>
+              {" "}
+              {passwordIsOpent ? <FaRegEyeSlash /> : <MdOutlineRemoveRedEye />}
+            </div>
           </label>
           {/* 
                       Submit Button 
