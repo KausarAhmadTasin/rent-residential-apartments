@@ -27,12 +27,14 @@ This project is a real estate website built using **React.js** and **Tailwind CS
 "react-router-dom": "^6.23.1",
 "sweetalert2": "^11.11.0",
 "swiper": "^11.1.4"
+```
 
 ##Setup Instructions
+
 1. **Clone the repository: git clone https://github.com/your-username/sweethome.git
 2. **Navigate to the project directory: cd sweethome
 3. **Install dependencies: npm install
-4. Start the development server: npm start
+4. **Start the development server: npm start
 5. **Open http://localhost:3000 to view it in your browser.
 css
 
